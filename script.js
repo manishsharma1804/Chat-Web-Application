@@ -410,3 +410,16 @@ logoutBtnn.addEventListener("click", function() {
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
+
+
+
+
+// Function to detect mobile devices and show a popup
+function detectMobileAndShowPopup() {
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+        alert("For the best experience, please use this application on a desktop or larger screen.");
+    }
+}
+
+// Call detectMobileAndShowPopup on page load
+window.onload = detectMobileAndShowPopup;
