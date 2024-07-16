@@ -173,7 +173,7 @@ header {
     display: flex;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     padding: 10px;
 }
 #message-input {
@@ -345,3 +345,13 @@ input:hover, .btn:hover {
     cursor: pointer;
 }
 
+.footer {
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid lightgrey;
+    background: #f8f9fa;
+    border-radius: 0 0 10px 10px;
+}
