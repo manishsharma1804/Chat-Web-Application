@@ -414,3 +414,34 @@ document.addEventListener('contextmenu', function(e) {
 
 
 
+// Function to adjust styles based on screen width (specifically for mobile)
+function adjustStylesForMobile() {
+    var screenWidth = window.innerWidth;
+    var messageForm = document.getElementById('message-form');
+    
+    // Check if screen width is less than 650px (considering mobile screens)
+    if (screenWidth < 650) {
+        messageForm.style.display = 'flex';
+        messageForm.style.alignItems = 'center';
+        messageForm.style.marginBottom = '45px';
+        messageForm.style.marginTop = '20px';
+        messageForm.style.padding = '10px';
+    } else {
+        // Reset to default or adjust for larger screens if needed
+        messageForm.style.display = ''; // Reset to default
+        messageForm.style.alignItems = ''; // Reset to default
+        messageForm.style.marginBottom = ''; // Reset to default
+        messageForm.style.marginTop = ''; // Reset to default
+        messageForm.style.padding = ''; // Reset to default
+    }
+}
+
+// Call the function when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    adjustStylesForMobile(); // Initial call when the page loads
+});
+
+// Call the function on window resize
+window.addEventListener('resize', function() {
+    adjustStylesForMobile(); // Call whenever the window is resized
+});

@@ -173,6 +173,7 @@ header {
     display: flex;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 40px;
     padding: 10px;
 }
 #message-input {
@@ -343,14 +344,4 @@ input:hover, .btn:hover {
     font-size: 16px;
     cursor: pointer;
 }
-/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 650px) {
-    .col {
-        width: 100%;
-        margin-top: 0;
-   }
-   #message-btn {
-    display: inline-block; /* Ensure button is displayed */
-    margin-top: 10px; /* Adjust margin as needed */
-}
-}
+
