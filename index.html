@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=1024">
+      <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">--> 
+      <title>Firebase RealTime Chat</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   </head>
+   <body>
+      <header>
+         <h1>Firebase RealTime Chat</h1>
+      </header>
+      <div class="container" id="login-container">
+         <form action="/action_page.php">
+            <div class="row">
+               <h2 style="text-align:center">Login with Google or as Guest</h2>
+               <div class="col">
+                  <a href="#" class="google btn" id="google-login-btn">
+                  <i class="fa fa-google fa-fw"></i> Login with Google
+                  </a>
+                  <a href="#" class="guest btn" id="guest-login-btn">
+                  <i class="fa fa-user-secret fa-fw"></i> Login as Guest
+                  </a>
+               </div>
+            </div>
+         </form>
+      </div>
+      <div id="container">
+         <div id="create-and-rooms">
+            <!-- Create Room Form -->
+            <div id="create-room">
+               <h3>Create a New Room</h3>
+               <form id="room-form">
+                  <input type="text" id="room-input" placeholder="Enter room name">
+                  <button type="submit" id="create-room-btn">Create</button>
+               </form>
+            </div>
+            <!-- Your Chat Rooms -->
+            <div id="your-rooms">
+               <h3>Your Chat Rooms</h3>
+               <ul id="your-room-list"></ul>
+            </div>
+            <!-- Room list -->
+            <div id="rooms">
+               <h3>Public Chat Rooms</h3>
+               <ul id="room-list"></ul>
+               <!-- New section for joined rooms -->
+            </div>
+         </div>
+         <!-- Chat area -->
+         <div id="chat">
+            <div id="chat-header">
+               <button id="logout-btn" class="logout-btn1">Logout</button>
+               <h2 id="room-name"></h2>
+               <p id="created-by"></p>
+            </div>
+            <div id="notification" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: #333; color: #fff; padding: 10px; border-radius: 5px; z-index: 1000;"></div>
+            <ul id="messages"></ul>
+            <form id="message-form">
+               <input type="text" id="message-input" placeholder="Type a message">
+               <button type="submit" id="message-btn">Send</button>
+            </form>
+         </div>
+         <!-- No room selected message -->
+         <div id="no-room-selected" class="no-room-selected">
+            <p>Select a chat room to start chatting.</p>
+            <p>Guest users cannot create rooms. Please choose a room to join.</p>
+            <button id="logout-btnn" class="logout-btn2">Logout</button>
+         </div>
+      </div>
+      <!-- Firebase SDK and Custom JavaScript -->
+      <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+      <script src="script.js"></script>
+   </body>
+</html>

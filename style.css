@@ -1,0 +1,352 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E0E1DD;
+   /* Background color */
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+header {
+    text-align: center;
+    background-color: #1B263B;
+   /* Header background color */
+    color: #E0E1DD;
+   /* Header text color */
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+#container {
+    display: none;
+    margin: 0px;
+}
+#create-and-rooms {
+    flex-basis: 30%;
+    padding: 10px;
+    border-right: 1px solid #415A77;
+   /* Sidebar border color */
+    height: calc(100vh - 20px);
+    overflow-y: auto;
+}
+#create-room, #rooms, #your-rooms {
+    margin-bottom: 20px;
+}
+#create-room h3, #rooms h3, #your-rooms h3 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+#room-list, #your-room-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: calc(100vh - 160px);
+}
+#room-list li, #your-room-list li {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #778DA9;
+   /* Room list item border color */
+}
+#room-list li:last-child, #your-room-list li:last-child {
+    border-bottom: 1px solid #778DA9;
+   /* Room list item border color for last item */
+}
+#room-list li:hover, #your-room-list li:hover {
+    background-color: #415A77;
+   /* Room list item background color on hover */
+}
+#room-list li.active, #your-room-list li.active {
+    background-color: #1B263B;
+   /* Active room list item background color */
+    color: #E0E1DD;
+   /* Active room list item text color */
+}
+#chat {
+    flex-basis: 90%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #415A77;
+   /* Chat container border color */
+    border-radius: 5px;
+    background-color: #E0E1DD;
+   /* Chat container background color */
+    overflow: hidden;
+    height: calc(100vh - 100px);
+    max-height: calc(100vh - 125px);
+    position: relative;
+}
+#chat-header {
+    text-align: center;
+    background-color: #1B263B;
+   /* Chat header background color */
+    color: #E0E1DD;
+   /* Chat header text color */
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#room-name {
+    margin-top: 0;
+}
+.no-room-selected {
+    display: none;
+    text-align: center;
+    padding: 180px;
+    font-size: 1.2em;
+    color: #888;
+}
+#messages {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    flex: 1;
+    overflow-y: auto;
+}
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 50%;
+    clear: both;
+}
+.sent {
+    background-color: #1B263B;
+   /* Sent message background color */
+    color: #E0E1DD;
+   /* Sent message text color */
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 50%;
+    margin: 5px 0 10px 500px;
+   /* Adjusted margin */
+}
+.received {
+    background-color: #E0E1DD;
+   /* Received message background color */
+}
+.message .message-content {
+    position: relative;
+    padding: 5px;
+}
+.message .message-sender {
+    font-weight: bold;
+    color: #888;
+    margin-right: 5px;
+}
+.message .message-text {
+    display: block;
+    margin-top: 5px;
+    color: #333;
+}
+.message .timestamp {
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 5px;
+    text-align: right;
+}
+.sent .message {
+    background-color: #1B263B;
+   /* Sent message background color */
+    color: #E0E1DD;
+   /* Sent message text color */
+    align-self: flex-end;
+    text-align: right;
+}
+.received .message-content {
+    background-color: #E0E1DD;
+   /* Received message background color */
+    align-self: flex-start;
+}
+/* Adjustments for message boxes */
+.sent .message-text {
+    color: #E0E1DD;
+   /* Adjusted text color for sent messages */
+}
+.received .message-text {
+    color: #333;
+   /* Adjusted text color for received messages */
+}
+#message-form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+#message-input {
+    flex: 1;
+    height: 40px;
+    margin-right: 10px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+#message-btn {
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1B263B;
+   /* Message button background color */
+    color: #E0E1DD;
+   /* Message button text color */
+    font-size: 16px;
+    cursor: pointer;
+}
+.room-created-by {
+    font-size: 0.8em;
+    color: #888;
+}
+.logout-btn1 {
+    position: absolute;
+    right: 15px;
+    padding: 10px;
+    margin: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D9534F;
+   /* Logout button background color */
+    color: #E0E1DD;
+   /* Logout button text color */
+    font-size: 16px;
+    cursor: pointer;
+}
+.logout-btn2 {
+    right: 15px;
+    padding: 10px;
+    margin: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D9534F;
+   /* Logout button background color */
+    color: #E0E1DD;
+   /* Logout button text color */
+    font-size: 16px;
+    cursor: pointer;
+}
+.icon {
+    margin-right: 10px;
+}
+/* style the container */
+.container {
+    position: absolute;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px 0 30px 0;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* style inputs and link buttons */
+input, .btn {
+    width: 60%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
+   /* remove underline from anchors */
+    cursor: pointer;
+}
+input:hover, .btn:hover {
+    opacity: 1;
+}
+/* add appropriate colors to google and guest buttons */
+.google {
+    background-color: #dd4b39;
+    color: white;
+}
+.guest {
+    background-color: #555555;
+    color: white;
+}
+/* Two-column layout */
+.col {
+    margin: auto;
+    padding: 0 50px;
+    margin-top: 6px;
+    text-align: center;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* bottom container */
+.bottom-container {
+    text-align: center;
+    background-color: #666;
+    border-radius: 0px 0px 4px 4px;
+}
+.delete-room-btn {
+    background: none;
+    border: none;
+    color: #ff0000;
+   /* Red color for the delete icon */
+    cursor: pointer;
+    padding: 5px;
+    display:none;
+   /* Hide by default */
+    position: absolute;
+    right: 10px;
+   /* Adjust as needed */
+}
+.delete-room-btn i {
+    font-size: 18px;
+   /* Adjust icon size */
+}
+.delete-room-btn:hover i {
+    color: #cc0000;
+   /* Darker red on hover */
+}
+/* Show the delete button on hover */
+.room-name:hover .delete-room-btn {
+    display: block;
+}
+.room-name {
+    display: flex;
+    align-items: center;
+   /* Vertical alignment */
+    justify-content: space-between;
+   /* Items spread apart */
+    position: relative;
+}
+#room-input {
+    height: 35px;
+    padding: 0 5px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+#create-room-btn {
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+    background-color: #1B263B;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+    .col {
+        width: 100%;
+        margin-top: 0;
+   }
+}
