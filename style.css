@@ -482,10 +482,10 @@ input:hover, .btn:hover {
         word-break: break-word;
     }
     .sidebar {
-        width: 280px; /* Sidebar width adjustment for small screens */
-        height: calc(100svh - 85px); /* Ensure full height on small screens */
+       /*  width: 280px; 
+        height: calc(100svh - 85px); 
         max-height: calc(100svh - 85px);
-        bottom: 0;
+        bottom: 0; */
     }
         
 }
@@ -507,6 +507,7 @@ input:hover, .btn:hover {
     #chat {
         max-height: calc(100svh - 20px);
         width: 100%;
+        bottom: 0;
     }
     .no-room-selected {
         margin: 0;
@@ -517,9 +518,9 @@ input:hover, .btn:hover {
         padding: 0px;
     }
     .sidebar {
-        width: 280px; /* Sidebar width adjustment for small screens */
-        height: calc(100svh - 85px); /* Ensure full height on small screens */
-        max-height: calc(100svh - 85px);
+       /*  width: 280px; 
+        height: calc(100svh - 85px);  
+        max-height: calc(100svh - 85px);*/
         bottom: 0;
     }
 }
