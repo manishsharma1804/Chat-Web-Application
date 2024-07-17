@@ -441,9 +441,6 @@ input:hover, .btn:hover {
     transition: margin-left .5s;
     padding: 16px;
 }
-.sidebar-footer {
-    flex-shrink: 0; /* Prevents the footer from shrinking */
-}
 
 #rooms-container {
     flex: 1; /* Allows this section to grow and take available space */
@@ -482,16 +479,12 @@ input:hover, .btn:hover {
         word-wrap: break-word;
         word-break: break-word;
     }
-
     .sidebar {
         width: 280px; /* Sidebar width adjustment for small screens */
         height: calc(100vh - 85px); /* Ensure full height on small screens */
         max-height: calc(100vh - 85px);
         bottom: 0;
         padding-bottom: 20px; /* Extra padding to avoid hidden content */
-    }
-    .content {
-        margin-left: 0;
     }
         
 }
