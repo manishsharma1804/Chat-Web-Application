@@ -36,6 +36,7 @@ googleLoginBtn.addEventListener("click", function() {
             document.getElementById("login-container").style.display = "none";
             document.getElementById("container").style.display = "flex";
             initializeChat();
+            updateUsernameDisplay(); // Call to update username display
             console.log("User signed in:", user);
         })
         .catch(error => {
@@ -53,6 +54,7 @@ guestLoginBtn.addEventListener('click', () => {
     // Disable room creation for guests
     document.getElementById("create-room").style.display = "none";
     initializeChat();
+    updateUsernameDisplay(); // Call to update username display
 });
 
 // Function to re-authenticate user
@@ -106,6 +108,7 @@ function initializeChat() {
         document.getElementById("your-rooms").style.display = "none";
         document.getElementById("no-room-selected").style.display = "block"; // Show additional guest message
     }
+    updateUsernameDisplay(); // Call to update username display
 }
 
 // Function to setup room creation form
@@ -413,29 +416,6 @@ document.addEventListener('contextmenu', function(e) {
 
 
 
-
-// Function to adjust styles based on screen width (specifically for mobile)
-function adjustStylesForMobile() {
-    var screenWidth = window.innerWidth;
-    var messageForm = document.getElementById('message-form');
-    
-    // Check if screen width is less than 650px (considering mobile screens)
-    if (screenWidth < 650) {
-        messageForm.style.display = 'flex';
-        messageForm.style.alignItems = 'center';
-        messageForm.style.marginBottom = '45px';
-        messageForm.style.marginTop = '20px';
-        messageForm.style.padding = '10px';
-    } else {
-        // Reset to default or adjust for larger screens if needed
-        messageForm.style.display = ''; // Reset to default
-        messageForm.style.alignItems = ''; // Reset to default
-        messageForm.style.marginBottom = ''; // Reset to default
-        messageForm.style.marginTop = ''; // Reset to default
-        messageForm.style.padding = ''; // Reset to default
-    }
-}
-
 // Call the function when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     adjustStylesForMobile(); // Initial call when the page loads
@@ -445,3 +425,53 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('resize', function() {
     adjustStylesForMobile(); // Call whenever the window is resized
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const roomList = document.getElementById('room-list');
+    roomList.addEventListener('click', (event) => {
+        if (event.target && event.target.nodeName === 'LI') {
+            autoCloseSidebarOnMobile();
+        }
+    });
+
+    const yourRoomList = document.getElementById('your-room-list');
+    yourRoomList.addEventListener('click', (event) => {
+        if (event.target && event.target.nodeName === 'LI') {
+            autoCloseSidebarOnMobile();
+        }
+    });
+});
+
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const menuBtn = document.getElementById('menuBtn');
+    if (sidebar.style.width === '280px') {
+        sidebar.style.width = '0';
+        document.querySelector('.content').style.marginLeft = '0';
+        menuBtn.classList.remove('hidden');
+    } else {
+        sidebar.style.width = '280px';
+        document.querySelector('.content').style.marginLeft = '280px';
+        menuBtn.classList.add('hidden');
+    }
+}
+
+function autoCloseSidebarOnMobile() {
+    if (window.innerWidth <= 768) { // Assuming mobile devices have a width of 768px or less
+        toggleSidebar();
+    }
+}
+
+// Function to update the username display
+function updateUsernameDisplay() {
+    const usernameDisplay = document.getElementById("username-display");
+    const usernameDisplayy = document.getElementById("username-displayy");
+    usernameDisplay.textContent = username;
+    usernameDisplayy.textContent = username;
+}
+
+
+
+

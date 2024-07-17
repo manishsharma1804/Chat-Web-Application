@@ -1,11 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: #E0E1DD;
    /* Background color */
     margin: 0;
     padding: 0;
     overflow-y: hidden;
 }
+body, h1, h2, h3, h4, h5, h6  {
+    font-family: Helvetica, Arial, sans-serif;
+  }
 header {
     text-align: center;
     background-color: #1B263B;
@@ -14,6 +16,7 @@ header {
    /* Header text color */
     padding: 10px 0;
     margin-bottom: 10px;
+    height: 60px;
 }
 #container {
     display: none;
@@ -23,15 +26,26 @@ header {
     flex-basis: 30%;
     padding: 10px;
     border-right: 1px solid #415A77;
-   /* Sidebar border color */
     height: calc(100vh - 20px);
     overflow-y: auto;
 }
 #create-room, #rooms, #your-rooms {
     margin-bottom: 20px;
 }
-#create-room h3, #rooms h3, #your-rooms h3 {
-    margin-top: 0;
+#create-room h3{
+    margin-top: 45px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+#your-rooms h3{
+    margin-top: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+#rooms h3 {
+    margin-top: 45px;
     text-align: center;
     margin-bottom: 10px;
     font-size: 1.2em;
@@ -40,12 +54,12 @@ header {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    overflow-y: auto;
+    overflow-y: hidden;
     max-height: calc(100vh - 160px);
 }
 #room-list li, #your-room-list li {
     position: relative;
-    padding: 10px;
+    padding: 5px 2px 5px 20px;
     cursor: pointer;
     border-bottom: 1px solid #778DA9;
    /* Room list item border color */
@@ -65,7 +79,7 @@ header {
    /* Active room list item text color */
 }
 #chat {
-    flex-basis: 90%;
+    flex-basis: 95%;
     display: flex;
     flex-direction: column;
     border: 1px solid #415A77;
@@ -74,8 +88,7 @@ header {
     background-color: #E0E1DD;
    /* Chat container background color */
     overflow: hidden;
-    height: calc(100vh - 100px);
-    max-height: calc(100vh - 125px);
+    height:90vh;
     position: relative;
 }
 #chat-header {
@@ -94,7 +107,8 @@ header {
 .no-room-selected {
     display: none;
     text-align: center;
-    padding: 180px;
+    margin: 180px 180px 200px 400px;
+    align-self: center;
     font-size: 1.2em;
     color: #888;
 }
@@ -104,24 +118,28 @@ header {
     margin: 0;
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 .message {
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 8px;
-    max-width: 50%;
+    max-width: 80%;
     clear: both;
+    word-wrap: break-word; 
+    word-break: break-word;
+
 }
 .sent {
     background-color: #1B263B;
-   /* Sent message background color */
     color: #E0E1DD;
-   /* Sent message text color */
     padding: 10px;
     border-radius: 5px;
-    max-width: 50%;
-    margin: 5px 0 10px 500px;
-   /* Adjusted margin */
+    max-width: 80%;
+    margin: 5px 0 10px auto;
+    word-wrap: break-word; 
+    word-break: break-word;
+
 }
 .received {
     background-color: #E0E1DD;
@@ -173,7 +191,7 @@ header {
     display: flex;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 5px;
     padding: 10px;
 }
 #message-input {
@@ -201,20 +219,15 @@ header {
     font-size: 0.8em;
     color: #888;
 }
-.logout-btn1 {
+.logout1{
     position: absolute;
-    right: 15px;
-    padding: 10px;
-    margin: 15px;
+    right: 18px;
     border: none;
-    border-radius: 5px;
-    background-color: #D9534F;
-   /* Logout button background color */
-    color: #E0E1DD;
-   /* Logout button text color */
-    font-size: 16px;
-    cursor: pointer;
+    color: red;
+    background-color: #E0E1DD;
+    font-size: medium;
 }
+
 .logout-btn2 {
     right: 15px;
     padding: 10px;
@@ -346,8 +359,7 @@ input:hover, .btn:hover {
 }
 
 .footer {
-    height: 60px;
-    padding: 0 30px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -355,3 +367,147 @@ input:hover, .btn:hover {
     background: #f8f9fa;
     border-radius: 0 0 10px 10px;
 }
+
+
+
+
+#menuBtn{
+    position: absolute;
+    left: 15px;
+    margin: 25px 0px 0px 0px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1B263B;
+    color: #E0E1DD;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#menuBtnn{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1B263B;
+    color: #E0E1DD;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sidebar {
+    height: calc(100vh - 85px); /* Full viewport height minus header height */
+    max-height: calc(100vh - 85px);
+    width: 250px; /* Adjust width as needed */
+    position: fixed; /* Keeps the sidebar fixed in place */
+    left: 0;
+    background-color: #E0E1DD; /* Sidebar background color */
+    overflow-y: auto; /* Adds vertical scrolling if content exceeds height */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.sidebar-footer {
+    background: #E0E1DD;
+    border-top: 1px solid lightgrey;
+    padding: 15px;
+    color: #333;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: #E0E1DD;
+    border: none;
+    font-size: medium;
+
+}
+
+.content {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+.sidebar-footer {
+    flex-shrink: 0; /* Prevents the footer from shrinking */
+}
+
+#rooms-container {
+    flex: 1; /* Allows this section to grow and take available space */
+    overflow-y: auto; /* Adds vertical scrolling if content exceeds height */
+}
+.openbtn.hidden {
+    display: none;
+}
+
+
+
+
+
+
+/* On screens that are less than 600px wide, make the sidebar width 250px */
+@media screen and (max-width: 600px) {
+    .sidebar {
+        width: 280px;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    #chat {
+        position: fixed;
+    }
+
+    .sent {
+        background-color: #1B263B;
+        color: #E0E1DD;
+        padding: 10px;
+        border-radius: 5px;
+        max-width: 80%;
+        margin: 5px 0 10px auto;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+        
+}
+
+
+/* Hide the sidebar on larger screens */
+@media screen and (min-width: 601px) {
+    .sidebar {width: 0;}
+    .content {margin-left: 0;}
+}
+
+
+
+@media screen and (max-width: 768px) {
+    #create-and-rooms {
+        flex: 0 0 40%; /* Adjusted sidebar width for medium screens */
+        height: calc(100vh - 100px);
+    }
+    #chat {
+        max-height: calc(100vh - 20px); /* Adjusted chat height for medium screens */
+        width: 99%;
+    }
+    .no-room-selected {
+        margin: 0;
+        position: fixed;
+        margin-top: 800px;
+    }
+    .content {
+        padding: 0px;
+    }
+}
+
