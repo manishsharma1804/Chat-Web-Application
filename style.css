@@ -359,7 +359,7 @@ input:hover, .btn:hover {
 }
 
 .footer {
-    height: 42px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -394,8 +394,11 @@ input:hover, .btn:hover {
 }
 
 .sidebar {
-    height: calc(100svh - 85px); /* Full viewport height minus header height */
-    max-height: calc(100svh - 85px);
+    /*height: calc(100svh - 85px);
+    max-height: calc(100svh - 85px); */
+    height: 90svh;
+    border: 1px solid #415A77;
+     border-radius: 5px;
     width: 250px; /* Adjust width as needed */
     position: fixed; /* Keeps the sidebar fixed in place */
     left: 0;
@@ -502,8 +505,7 @@ input:hover, .btn:hover {
         height: calc(100svh - 100px);
     }
     #chat {
-        max-height: calc(100svh - 20px); /* Adjusted chat height for medium screens */
-        width: 99%;
+        max-height: calc(100svh - 20px);
     }
     .no-room-selected {
         margin: 0;
