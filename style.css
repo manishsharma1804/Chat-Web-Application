@@ -506,6 +506,7 @@ input:hover, .btn:hover {
     }
     #chat {
         max-height: calc(100svh - 20px);
+        width: 100%;
     }
     .no-room-selected {
         margin: 0;
@@ -514,6 +515,12 @@ input:hover, .btn:hover {
     }
     .content {
         padding: 0px;
+    }
+    .sidebar {
+        width: 280px; /* Sidebar width adjustment for small screens */
+        height: calc(100svh - 85px); /* Ensure full height on small screens */
+        max-height: calc(100svh - 85px);
+        bottom: 0;
     }
 }
 
