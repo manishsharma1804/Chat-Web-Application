@@ -404,6 +404,7 @@ input:hover, .btn:hover {
     z-index: 1000; /* Ensure it stays on top of other content */
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px; /* Add some padding to ensure the content isn't hidden */
 }
 
 .sidebar a {
@@ -415,6 +416,7 @@ input:hover, .btn:hover {
     transition: 0.3s;
 }
 .sidebar-footer {
+    flex-shrink: 0; /* Prevents the footer from shrinking */
     background: #E0E1DD;
     border-top: 1px solid lightgrey;
     padding: 15px;
@@ -479,6 +481,17 @@ input:hover, .btn:hover {
         margin: 5px 0 10px auto;
         word-wrap: break-word;
         word-break: break-word;
+    }
+
+    .sidebar {
+        width: 280px; /* Sidebar width adjustment for small screens */
+        height: calc(100vh - 85px); /* Ensure full height on small screens */
+        max-height: calc(100vh - 85px);
+        bottom: 0;
+        padding-bottom: 20px; /* Extra padding to avoid hidden content */
+    }
+    .content {
+        margin-left: 0;
     }
         
 }
