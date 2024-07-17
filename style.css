@@ -484,7 +484,6 @@ input:hover, .btn:hover {
         height: calc(100vh - 85px); /* Ensure full height on small screens */
         max-height: calc(100vh - 85px);
         bottom: 0;
-        padding-bottom: 20px; /* Extra padding to avoid hidden content */
     }
         
 }
