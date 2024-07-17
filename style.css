@@ -26,7 +26,7 @@ header {
     flex-basis: 30%;
     padding: 10px;
     border-right: 1px solid #415A77;
-    height: calc(100vh - 20px);
+    height: calc(100svh - 20px);
     overflow-y: auto;
 }
 #create-room, #rooms, #your-rooms {
@@ -55,7 +55,7 @@ header {
     padding: 0;
     margin: 0;
     overflow-y: hidden;
-    max-height: calc(100vh - 160px);
+    max-height: calc(100svh - 160px);
 }
 #room-list li, #your-room-list li {
     position: relative;
@@ -88,7 +88,7 @@ header {
     background-color: #E0E1DD;
    /* Chat container background color */
     overflow: hidden;
-    height:90vh;
+    height:90svh;
     position: relative;
 }
 #chat-header {
@@ -394,8 +394,8 @@ input:hover, .btn:hover {
 }
 
 .sidebar {
-    height: calc(100vh - 85px); /* Full viewport height minus header height */
-    max-height: calc(100vh - 85px);
+    height: calc(100svh - 85px); /* Full viewport height minus header height */
+    max-height: calc(100svh - 85px);
     width: 250px; /* Adjust width as needed */
     position: fixed; /* Keeps the sidebar fixed in place */
     left: 0;
@@ -481,8 +481,8 @@ input:hover, .btn:hover {
     }
     .sidebar {
         width: 280px; /* Sidebar width adjustment for small screens */
-        height: calc(100vh - 85px); /* Ensure full height on small screens */
-        max-height: calc(100vh - 85px);
+        height: calc(100svh - 85px); /* Ensure full height on small screens */
+        max-height: calc(100svh - 85px);
         bottom: 0;
     }
         
@@ -500,10 +500,10 @@ input:hover, .btn:hover {
 @media screen and (max-width: 768px) {
     #create-and-rooms {
         flex: 0 0 40%; /* Adjusted sidebar width for medium screens */
-        height: calc(100vh - 100px);
+        height: calc(100svh - 100px);
     }
     #chat {
-        max-height: calc(100vh - 20px); /* Adjusted chat height for medium screens */
+        max-height: calc(100svh - 20px); /* Adjusted chat height for medium screens */
         width: 99%;
     }
     .no-room-selected {
