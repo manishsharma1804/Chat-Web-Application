@@ -404,7 +404,6 @@ input:hover, .btn:hover {
     z-index: 1000; /* Ensure it stays on top of other content */
     display: flex;
     flex-direction: column;
-    padding-bottom: 20px; /* Add some padding to ensure the content isn't hidden */
 }
 
 .sidebar a {
