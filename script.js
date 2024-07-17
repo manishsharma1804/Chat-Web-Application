@@ -415,19 +415,6 @@ document.addEventListener('contextmenu', function(e) {
 });
 
 
-
-// Call the function when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    adjustStylesForMobile(); // Initial call when the page loads
-});
-
-// Call the function on window resize
-window.addEventListener('resize', function() {
-    adjustStylesForMobile(); // Call whenever the window is resized
-});
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const roomList = document.getElementById('room-list');
     roomList.addEventListener('click', (event) => {
