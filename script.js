@@ -431,25 +431,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function toggleSidebar() {
+// Function to initialize sidebar state based on screen width
+function initializeSidebar() {
     const sidebar = document.getElementById('sidebar');
     const menuBtn = document.getElementById('menuBtn');
-    if (sidebar.style.width === '280px') {
+    if (window.innerWidth <= 768) { // Assuming mobile devices have a width of 768px or less
         sidebar.style.width = '0';
         document.querySelector('.content').style.marginLeft = '0';
         menuBtn.classList.remove('hidden');
     } else {
-        sidebar.style.width = '280px';
-        document.querySelector('.content').style.marginLeft = '280px';
+        sidebar.style.width = '310px';
+        document.querySelector('.content').style.marginLeft = '310px';
         menuBtn.classList.add('hidden');
     }
 }
 
+// Function to toggle sidebar
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const menuBtn = document.getElementById('menuBtn');
+    if (sidebar.style.width === '310px') {
+        sidebar.style.width = '0';
+        document.querySelector('.content').style.marginLeft = '0';
+        menuBtn.classList.remove('hidden');
+    } else {
+        sidebar.style.width = '310px';
+        document.querySelector('.content').style.marginLeft = '310px';
+        menuBtn.classList.add('hidden');
+    }
+}
+
+// Function to auto close sidebar on mobile
 function autoCloseSidebarOnMobile() {
     if (window.innerWidth <= 768) { // Assuming mobile devices have a width of 768px or less
         toggleSidebar();
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize sidebar state based on screen width
+    initializeSidebar();
+
+    const roomList = document.getElementById('room-list');
+    roomList.addEventListener('click', (event) => {
+        if (event.target && event.target.nodeName === 'LI') {
+            autoCloseSidebarOnMobile();
+        }
+    });
+
+    const yourRoomList = document.getElementById('your-room-list');
+    yourRoomList.addEventListener('click', (event) => {
+        if (event.target && event.target.nodeName === 'LI') {
+            autoCloseSidebarOnMobile();
+        }
+    });
+
+    // Add resize event listener to adjust sidebar on window resize
+    window.addEventListener('resize', initializeSidebar);
+});
 
 // Function to update the username display
 function updateUsernameDisplay() {
@@ -458,6 +497,7 @@ function updateUsernameDisplay() {
     usernameDisplay.textContent = username;
     usernameDisplayy.textContent = username;
 }
+
 
 
 

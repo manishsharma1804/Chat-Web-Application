@@ -9,15 +9,18 @@ body, h1, h2, h3, h4, h5, h6  {
     font-family: Helvetica, Arial, sans-serif;
   }
 header {
-    text-align: center;
     background-color: #1B263B;
-   /* Header background color */
     color: #E0E1DD;
-   /* Header text color */
     padding: 10px 0;
     margin-bottom: 10px;
-    height: 60px;
+    height: 65px;
 }
+.app-name{
+    margin-left: 20px;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
 #container {
     display: none;
     margin: 0px;
@@ -34,19 +37,22 @@ header {
 }
 #create-room h3{
     margin-top: 45px;
-    text-align: center;
+    font-weight: bolder;
+    margin-left: 15px;
     margin-bottom: 10px;
     font-size: 1.2em;
 }
 #your-rooms h3{
+    font-weight: bold;
+    margin-left: 15px;
     margin-top: 5px;
-    text-align: center;
     margin-bottom: 10px;
     font-size: 1.2em;
 }
 #rooms h3 {
-    margin-top: 45px;
-    text-align: center;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 20px;
     margin-bottom: 10px;
     font-size: 1.2em;
 }
@@ -92,17 +98,24 @@ header {
     position: relative;
 }
 #chat-header {
-    text-align: center;
+    text-align: right;
+    padding-right: 30px;
     background-color: #1B263B;
-   /* Chat header background color */
     color: #E0E1DD;
-   /* Chat header text color */
-    padding: 10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 #room-name {
-    margin-top: 0;
+    margin-top: 8px;
+    font-size: larger;
+    font-weight: 600;
+}
+#created-by{
+    font-size:smaller;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+
 }
 .no-room-selected {
     display: none;
@@ -224,7 +237,7 @@ header {
     right: 18px;
     border: none;
     color: red;
-    background-color: #E0E1DD;
+    background-color: white;
     font-size: medium;
 }
 
@@ -341,7 +354,7 @@ input:hover, .btn:hover {
     padding: 0 5px;
     border: none;
     border-radius: 5px;
-    margin-left: 5px;
+    margin-left: 15px;
     background-color: white;
     color: black;
     font-size: 16px;
@@ -359,6 +372,7 @@ input:hover, .btn:hover {
 }
 
 .footer {
+    font-size: smaller;
     height: 25px;
     display: flex;
     align-items: center;
@@ -419,7 +433,7 @@ input:hover, .btn:hover {
 }
 .sidebar-footer {
     flex-shrink: 0; /* Prevents the footer from shrinking */
-    background: #E0E1DD;
+    background: white;
     border-top: 1px solid lightgrey;
     padding: 15px;
     color: #333;
@@ -460,7 +474,7 @@ input:hover, .btn:hover {
 /* On screens that are less than 600px wide, make the sidebar width 250px */
 @media screen and (max-width: 600px) {
     .sidebar {
-        width: 280px;
+        width: 310px;
     }
 
     .content {
@@ -481,14 +495,20 @@ input:hover, .btn:hover {
         word-wrap: break-word;
         word-break: break-word;
     }
-    .sidebar {
-       /*  width: 280px; 
+    .container {
+        width: 80%;
+    }
+}
+   /* .sidebar {
+         width: 280px; 
         height: calc(100svh - 85px); 
         max-height: calc(100svh - 85px);
-        bottom: 0; */
+        bottom: 0; 
     }
+        */
+
         
-}
+
 
 
 /* Hide the sidebar on larger screens */
@@ -522,6 +542,12 @@ input:hover, .btn:hover {
         height: calc(100svh - 85px);  
         max-height: calc(100svh - 85px);*/
         bottom: 0;
+        width: 310px;
     }
+    .container {
+        width: 85%;
+    }
+
+    
 }
 

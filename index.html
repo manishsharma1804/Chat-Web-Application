@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firebase RealTime Chat</title>
+    <title>ChatFusion</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Firebase RealTime Chat</h1>
+        <h1 class="app-name">ChatFusion 💬</h1>
     </header>
     <div class="container" id="login-container">
         <form action="/action_page.php">
@@ -30,7 +30,7 @@
         <div class="sidebar" id="sidebar">
             <button class="closebtn sticky" onclick="toggleSidebar()">☰</button>
             <div id="create-room" class="sticky">
-                <h3>Create a New Room</h3>
+                <h3>Want to Create a New Room ?</h3>
                 <form id="room-form">
                     <input type="text" id="room-input" autocomplete="off" placeholder="Enter room name">
                     <button type="submit" id="create-room-btn">Create</button>
@@ -38,17 +38,17 @@
             </div>
             <div id="rooms-container">
                 <div id="your-rooms">
-                    <h3>Your Chat Rooms</h3>
+                    <h3>Your Chat Rooms:</h3>
                     <ul id="your-room-list"></ul>
                 </div>
                 <div id="rooms">
-                    <h3>Public Chat Rooms</h3>
+                    <h3>Public Chat Rooms:</h3>
                     <ul id="room-list"></ul>
                 </div>
             </div>
             <div class="sidebar-footer">
                 <div id="user-info">
-                    Hi, <span id="username-display"></span>
+                  <strong><span id="username-display"></span> </strong>
                     <button id="logout-btn" class="logout1"><i class="fa fa-solid fa-power-off"></i></button>
                 </div>
             </div>
@@ -71,16 +71,16 @@
             </form>
             <!-- Footer -->
             <div class="footer">
-                <p>Designed by <a href="https://www.instagram.com/me.manish18/" target="_blank">MANISH SHARMA</a> &copy; 2024</p>
+                <p>Designed by <a href="https://www.instagram.com/me.manish18/" target="_blank" style="text-decoration: none;">MANISH SHARMA</a> &copy; 2024</p>
             </div>
         </div>
         <!-- No room selected message -->
         <div id="no-room-selected" class="no-room-selected">
             <div id="user-info">
-                Logged in as: <span id="username-displayy"></span>
-            </div>
-            <p>Select a chat room to start chatting.</p>
-            <p>Guest users cannot create rooms. Please choose a room to join.</p>
+               <strong>"Hey <span id="username-displayy" style="color: #1B263B;"></span>, are you ready to catch up on the latest chats?"
+            </div></strong> 
+            <p>Please Select a chat room to start chatting.</p>
+            <p>If you are Guest user You Can't create rooms. Please choose any existing room to chat.</p>
             <button class="openbtn" id="menuBtnn" onclick="toggleSidebar()">Select or Create Room</button>
             <button id="logout-btnn" class="logout-btn2">Logout</button>
         </div>

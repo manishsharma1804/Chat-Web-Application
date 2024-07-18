@@ -1,8 +1,8 @@
-# Firebase Real-Time Chat Application
+# Firebase Real-Time Chat Application named "ChatFusion 💬"
 
 ## Setup Instructions
 
-1. Clone the repository: `git clone <repository-url>`
+1. Clone the repository: `git clone https://github.com/manishsharma1804/Chat-Web-Application.git`
 2. Navigate to the project directory: `cd chat-application`
 3. Open `index.html` in a web browser.
 4. Ensure internet connectivity for Firebase services to work.
@@ -14,6 +14,7 @@
 - Create and join chat rooms
 - Unique usernames
 - Message timestamps and sender identification
+- New Message Notifications
 - Responsive design
 
 ## Dependencies
