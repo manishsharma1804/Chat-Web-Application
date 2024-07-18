@@ -500,5 +500,20 @@ function updateUsernameDisplay() {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const roomList = document.getElementById('room-list');
+    roomList.addEventListener('click', (event) => {
+        if (event.target && event.target.nodeName === 'LI') {
+            autoCloseSidebarOnMobile(); // Close sidebar on room click
+        }
+    });
+
+    const yourRoomList = document.getElementById('your-room-list');
+    yourRoomList.addEventListener('click', (event) => {
+        if (event.target && event.target.nodeName === 'LI') {
+            autoCloseSidebarOnMobile(); // Close sidebar on room click
+        }
+    });
+});
 
 
